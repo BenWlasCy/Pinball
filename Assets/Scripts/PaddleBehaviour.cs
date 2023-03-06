@@ -9,7 +9,7 @@ public class PaddleBehaviour : MonoBehaviour
 
     private void Update()
     {
-        Flip(Keyboard.current.spaceKey.isPressed);
+        //Flip(Keyboard.current.spaceKey.isPressed);
     }
     public void Flip(bool isPressed)
     {

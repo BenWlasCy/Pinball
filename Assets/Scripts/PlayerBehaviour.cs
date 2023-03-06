@@ -7,21 +7,25 @@ public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] PaddleBehaviour paddleLeft;
     [SerializeField] PaddleBehaviour paddleRight;
+    [SerializeField] Plunger plunger;
 
-    [SerializeField] InputAction inputOne;
-    [SerializeField] InputAction inputTwo;
+    [SerializeField] InputAction inputOneLeft;
+    [SerializeField] InputAction inputTwoRight;
+    [SerializeField] InputAction plungerInput;
     // Start is called before the first frame update
 
     private void OnEnable()
     {
-        inputOne.Enable();
-        inputTwo.Enable();
+        inputOneLeft.Enable();
+        inputTwoRight.Enable();
+        plungerInput.Enable();
     }
 
     private void OnDisable()
     {
-        inputOne.Disable();
-        inputTwo.Disable();
+        inputOneLeft.Disable();
+        inputTwoRight.Disable();
+        plungerInput.Disable();
     }
     void Start()
     {
@@ -31,7 +35,8 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        paddleLeft.Flip(inputOne.IsPressed());
-        paddleRight.Flip(inputTwo.IsPressed());
+        paddleLeft.Flip(inputOneLeft.IsPressed());
+        paddleRight.Flip(inputTwoRight.IsPressed());
+        plunger.DrawSpring(plungerInput.ReadValue<float>());
     }
 }
