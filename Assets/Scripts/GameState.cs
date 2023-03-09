@@ -7,7 +7,7 @@ public class GameState : MonoBehaviour
     public int score;
     void Awake()
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("GameStateManager");
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("GameState");
 
         if (objects.Length > 1)
         {
