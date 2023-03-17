@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathZoneBehaviour : MonoBehaviour
 {
-
+    [SerializeField] LifeManager life;
     [SerializeField] Transform spawnpoint;
     // Start is called before the first frame update
 
@@ -14,6 +14,8 @@ public class DeathZoneBehaviour : MonoBehaviour
     }
     IEnumerator WaitToRespawn(Collider2D collider)
     {
+        life.UpdateLives();
+        
         yield return new WaitForSeconds(2);
         collider.attachedRigidbody.transform.position = spawnpoint.position;
         collider.attachedRigidbody.velocity = Vector2.zero;

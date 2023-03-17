@@ -50,4 +50,5 @@ public class GameSaveManager : MonoBehaviour
             Debug.Log($"Saved {gameState.score}");
         }
     }
+
 }
